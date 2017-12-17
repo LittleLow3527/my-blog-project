@@ -3,7 +3,11 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+
 class Category(models.Model):
+
+
+
     """
     Django 要求模型必须继承 models.Model 类。
     Category 只需要一个简单的分类名 name 就可以了。
@@ -53,7 +57,6 @@ class Post(models.Model):
     # https://docs.djangoproject.com/en/1.10/topics/db/models/#relationships
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag, blank=True)
-
 
     # 文章作者，这里 User 是从 django.contrib.auth.models 导入的。
     # django.contrib.auth 是 Django 内置的应用，专门用于处理网站用户的注册、登录等流程，User 是 Django 为我们已经写好的用户模型。
